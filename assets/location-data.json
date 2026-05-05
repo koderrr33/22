@@ -1,0 +1,72 @@
+[
+    {
+        "latitude": 3.5952,
+        "longitude": 98.6722,
+        "title": "PT Perkebunan Nusantara (PTPN) - Sumatera",
+        "description": "Pusat industri perkebunan sawit dan karet terbesar. Mitra utama bagi mahasiswa pertanian, teknik, dan manajemen di wilayah Sumatera Utara dan sekitarnya.",
+        "zoomLevel": 15
+    },
+    {
+        "latitude": -0.4725,
+        "longitude": 100.3842,
+        "title": "PT Semen Padang - Sumatera",
+        "description": "Produsen semen tertua di Indonesia. Menjadi mitra industri strategis di Sumatera Barat untuk bidang teknik industri, kimia, dan logistik.",
+        "zoomLevel": 16
+    },
+    {
+        "latitude": -6.1754,
+        "longitude": 106.8272,
+        "title": "PT Telkom Indonesia Tbk - Jawa",
+        "description": "Pusat digital dan telekomunikasi nasional. Fokus pada pengembangan IT, data science, dan bisnis digital dengan kantor pusat di Jakarta dan Bandung.",
+        "zoomLevel": 17
+    },
+    {
+        "latitude": -7.2654,
+        "longitude": 112.7425,
+        "title": "PT Pelabuhan Indonesia (Pelindo) - Jawa",
+        "description": "Operator pelabuhan terbesar di Indonesia. Mitra utama untuk manajemen logistik, teknik sipil perkapalan, dan administrasi bisnis di Surabaya.",
+        "zoomLevel": 16
+    },
+    {
+        "latitude": -1.2420,
+        "longitude": 116.8942,
+        "title": "PT Pertamina Hulu Mahakam - Kalimantan",
+        "description": "Unit operasional migas besar di Kalimantan Timur. Fokus pada teknik perminyakan, geologi, dan keselamatan kerja (HSE) di wilayah Balikpapan.",
+        "zoomLevel": 15
+    },
+    {
+        "latitude": -3.4371,
+        "longitude": 114.8436,
+        "title": "PT Adaro Energy Tbk - Kalimantan",
+        "description": "Perusahaan pertambangan batu bara terintegrasi di Kalimantan Selatan. Menyediakan program magang di bidang pertambangan, mesin, dan lingkungan.",
+        "zoomLevel": 15
+    },
+    {
+        "latitude": -5.1476,
+        "longitude": 119.4327,
+        "title": "PT Semen Tonasa - Sulawesi",
+        "description": "Produsen semen terbesar di Indonesia Timur yang berpusat di Sulawesi Selatan. Mitra industri kunci untuk riset material dan operasional pabrik.",
+        "zoomLevel": 16
+    },
+    {
+        "latitude": -2.8552,
+        "longitude": 121.3638,
+        "title": "PT Vale Indonesia Tbk - Sulawesi",
+        "description": "Raksasa pertambangan nikel di Sorowako, Sulawesi Selatan. Fokus pada praktik pertambangan berkelanjutan, metalurgi, dan teknik elektro.",
+        "zoomLevel": 15
+    },
+    {
+        "latitude": -4.0581,
+        "longitude": 137.1145,
+        "title": "PT Freeport Indonesia - Papua",
+        "description": "Salah satu perusahaan tambang emas dan tembaga terbesar di dunia. Menawarkan pengalaman magang teknis yang sangat komprehensif di dataran tinggi Mimika.",
+        "zoomLevel": 14
+    },
+    {
+        "latitude": -0.8615,
+        "longitude": 131.2522,
+        "title": "PT Kilang Pertamina Internasional RU VII - Papua",
+        "description": "Kilang minyak di Kasim, Sorong, Papua Barat. Mitra vital bagi pengembangan energi di wilayah Timur Indonesia, terutama untuk bidang teknik kimia.",
+        "zoomLevel": 16
+    }
+]
