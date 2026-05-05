@@ -1,32 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <title>  </title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <!-- Custom Styles -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LKS 2026 - Client Side Module</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h2 class="heading"> Peta Mitra Industri </h2>
-    <div id="mymap"> </div>
-    <div class="button-group flex-style">
-        <div class="component1">
-            <button class="map-zoom-out-btn"> Map Zoom Out </button>
-        </div>
-        <div class="component2">
-            <select class="select-dropdown" name="dropdown">
-                <option> Select any Mitra </option>
-            </select>
-            <button class="search-btn"> Search </button>
-        </div>
-    </div>
-    <footer class="footer flex-style"> Made Using Leaflet JS</footer>
+  <div class="app-layout">
+    <aside class="left-panel">
+      <h1>Find Route</h1>
+      <p class="small-text">Pilih lokasi asal dan tujuan.</p>
+      <label for="route-from">Dari</label>
+      <input id="route-from" list="location-options" placeholder="Nama lokasi">
+      <label for="route-to">Ke</label>
+      <input id="route-to" list="location-options" placeholder="Nama lokasi">
+      <datalist id="location-options"></datalist>
 
-    <script type="text/javascript" src="js/script.js"></script>
+      <label for="sort-mode">Urutkan</label>
+      <select id="sort-mode">
+        <option value="fastest">Tercepat</option>
+        <option value="cheapest">Termurah</option>
+      </select>
+      <button id="find-route-btn" disabled>Cari</button>
+
+      <div class="section-title">Petunjuk</div>
+      <ul class="instructions">
+        <li>Double-click peta untuk tambah lokasi.</li>
+        <li>Klik Hubungkan lalu pilih marker tujuan.</li>
+        <li>Zoom: Ctrl + scroll atau tombol +/-.</li>
+        <li>Drag peta saat zoom untuk pan.</li>
+      </ul>
+
+      <div class="section-title">Daftar Lokasi</div>
+      <ul id="location-list" class="location-list"></ul>
+    </aside>
+
+    <main class="map-panel">
+      <div class="map-toolbar">
+        <button id="zoom-in-btn" type="button">+</button>
+        <button id="zoom-out-btn" type="button">-</button>
+        <span id="connect-status">Mode Hubungkan: Nonaktif</span>
+      </div>
+      <div id="map"></div>
+    </main>
+
+    <aside class="right-panel">
+      <h2>Hasil Rute</h2>
+      <p class="small-text">Maksimal 5 rute (langsung / 1 transit).</p>
+      <div id="route-results"></div>
+      <div class="section-title">Legenda Moda</div>
+      <ul class="legend-list">
+        <li><span style="background:#2E86DE"></span>Jalan Kaki (5 km/jam, Rp0/km)</li>
+        <li><span style="background:#8E44AD"></span>Bus (60 km/jam, Rp500/km)</li>
+        <li><span style="background:#27AE60"></span>Kereta (100 km/jam, Rp700/km)</li>
+      </ul>
+    </aside>
+  </div>
+
+  <div id="location-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Tambah Lokasi</h3>
+      <input id="location-name-input" placeholder="Nama lokasi">
+      <p id="location-error" class="error-text"></p>
+      <div class="modal-actions">
+        <button id="location-save-btn">Simpan</button>
+        <button id="location-cancel-btn" class="secondary">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="connection-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Hubungkan Lokasi</h3>
+      <p id="connection-target" class="small-text"></p>
+      <input id="distance-input" type="number" step="0.1" min="0.1" placeholder="Jarak (km)">
+      <select id="transport-select">
+        <option value="walk">Jalan Kaki</option>
+        <option value="bus">Bus</option>
+        <option value="train">Kereta</option>
+      </select>
+      <p id="connection-error" class="error-text"></p>
+      <div class="modal-actions">
+        <button id="connection-save-btn">Simpan</button>
+        <button id="connection-cancel-btn" class="secondary">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
